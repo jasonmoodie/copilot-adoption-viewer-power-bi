@@ -36,7 +36,7 @@ First, you'll need to retrieve your organization's Copilot usage data using the 
 
 **API Endpoint**: 
 ```
-/enterprises/ENTERPRISE/copilot/metrics/reports/enterprise-28-day/latest
+/enterprises/{enterprise}/copilot/metrics/reports/enterprise-28-day/latest
 ```
 
 📚 **API Reference**: [GitHub Copilot API Endpoints](https://docs.github.com/en/enterprise-cloud@latest/rest/copilot/copilot-usage-metrics?apiVersion=2022-11-28#get-copilot-enterprise-usage-metrics)
