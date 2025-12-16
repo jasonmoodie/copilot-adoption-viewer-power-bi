@@ -36,10 +36,10 @@ First, you'll need to retrieve your organization's Copilot usage data using the 
 
 **API Endpoint**: 
 ```
-GET /enterprises/{enterprise}/copilot/metrics
+/enterprises/{enterprise}/copilot/metrics/reports/enterprise-28-day/latest
 ```
 
-📚 **API Documentation**: [GitHub Copilot Enterprise and User Usage Metrics API](https://docs.github.com/en/enterprise-cloud@latest/early-access/copilot-metrics/apis/rest-api-endpoints-for-copilot-enterprise-and-user-usage-metrics)
+📚 **API Reference**: [GitHub Copilot API Endpoints](https://docs.github.com/en/enterprise-cloud@latest/rest/copilot/copilot-usage-metrics?apiVersion=2022-11-28#get-copilot-enterprise-usage-metrics)
 
 ### Step 2: Configure Power BI Data Source
 
@@ -63,7 +63,7 @@ GET /enterprises/{enterprise}/copilot/metrics
 ## 📊 Understanding the Metrics
 
 - **Detailed Metrics Guide**: [Interpreting GitHub Copilot Metrics](https://docs.github.com/en/enterprise-cloud@latest/early-access/copilot-metrics/dashboards/interpreting-the-metrics)
-- **API Reference**: [GitHub Copilot API Endpoints](https://docs.github.com/en/enterprise-cloud@latest/early-access/copilot-metrics/apis/rest-api-endpoints-for-copilot-enterprise-and-user-usage-metrics)
+- **API Reference**: [GitHub Copilot API Endpoints](https://docs.github.com/en/enterprise-cloud@latest/rest/copilot/copilot-usage-metrics?apiVersion=2022-11-28#get-copilot-enterprise-usage-metrics)
 
 
 ## 🛠️ Troubleshooting
