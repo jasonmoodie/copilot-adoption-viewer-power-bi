@@ -8,6 +8,8 @@ Welcome to your comprehensive GitHub Copilot adoption analytics dashboard! This 
 
 ## 📸 Dashboard Preview
 
+> **🆕 New: KPI Dashboard Added!** A new KPI dashboard has been added to the Power BI report, surfacing high-level business metrics such as Potential Annual Savings, Hours Saved, Cost Savings, Total Devs, and Avg Active Devs, along with Engagement and Daily Cost Savings trends.
+
 ![Main Dashboard](assets/main_dashboard.png)
 *Main overview dashboard showing key adoption metrics*
 
