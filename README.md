@@ -2,10 +2,6 @@
 
 Welcome to your comprehensive GitHub Copilot adoption analytics dashboard! This Power BI dashboard helps you visualize and understand how your team is adopting GitHub Copilot across your organization.
 
-📢 **Learn More**: Check out the [official GitHub announcement](https://github.blog/changelog/2025-10-28-copilot-usage-metrics-dashboard-and-api-in-public-preview/) about the Copilot usage metrics dashboard and API now in public preview!
-
-> **🔬 Beta Version Notice**: This dashboard uses GitHub's beta Copilot metrics API, which is currently being refined and enhanced. Features and data structure may evolve as GitHub continues to improve the API. Stay tuned for updates! 
-
 ## 📸 Dashboard Preview
 
 ![Main Dashboard](assets/main_dashboard.png)
@@ -39,7 +35,7 @@ First, you'll need to retrieve your organization's Copilot usage data using the 
 /enterprises/{enterprise}/copilot/metrics/reports/enterprise-28-day/latest
 ```
 
-📚 **API Reference**: [GitHub Copilot API Endpoints](https://docs.github.com/en/enterprise-cloud@latest/rest/copilot/copilot-usage-metrics?apiVersion=2022-11-28#get-copilot-enterprise-usage-metrics)
+📚 **API Reference**: [GitHub Copilot API Endpoints](https://docs.github.com/en/enterprise-cloud@latest/rest/copilot/copilot-usage-metrics?apiVersion=2026-03-10)
 
 ### Step 2: Configure Power BI Data Source
 
@@ -52,6 +48,23 @@ First, you'll need to retrieve your organization's Copilot usage data using the 
    - Select **Advanced Editor** in the top menu
    - Update the source path to point to your JSON data:
    ![Advanced Editor](assets/advanced_editor_source.png)
+     Alternatively, update the report to pull data dynamically.  Please note that this example assumes just one download link.
+
+     ```powerquery
+     let
+         // Replace <YOUR-TOKEN> and <ENTERPRISE> with your actual token and enterprise name.
+         url = "https://api.github.com/enterprises/<ENTERPRISE>/copilot/metrics/reports/users-28-day/latest",
+         headers = [
+             #"Accept" = "application/vnd.github+json",
+             #"Authorization" = "Bearer " & <YOUR-TOKEN>,
+             #"X-GitHub-Api-Version" = "2026-03-10"
+         ],
+         Metrics = Json.Document(Web.Contents(url, [Headers=headers])),
+         ReportUrl = Metrics[download_links]{0},
+         Report = Web.Contents(ReportUrl),
+         Source = Table.FromColumns({Lines.FromBinary(Report, null, null)}), 
+     ```
+    
    - Click **Done** and then **Close & Apply** to save your changes.
 
 ### Step 3: Refresh Your Dashboard
