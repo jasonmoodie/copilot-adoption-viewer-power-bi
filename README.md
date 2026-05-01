@@ -56,7 +56,7 @@ First, you'll need to retrieve your organization's Copilot usage data using the 
          url = "https://api.github.com/enterprises/<ENTERPRISE>/copilot/metrics/reports/users-28-day/latest",
          headers = [
              #"Accept" = "application/vnd.github+json",
-             #"Authorization" = "Bearer " & <YOUR-TOKEN>,
+             #"Authorization" = "Bearer <YOUR-TOKEN>",
              #"X-GitHub-Api-Version" = "2026-03-10"
          ],
          Metrics = Json.Document(Web.Contents(url, [Headers=headers])),
@@ -76,7 +76,7 @@ First, you'll need to retrieve your organization's Copilot usage data using the 
 ## 📊 Understanding the Metrics
 
 - **Detailed Metrics Guide**: [Interpreting GitHub Copilot Metrics](https://docs.github.com/en/enterprise-cloud@latest/early-access/copilot-metrics/dashboards/interpreting-the-metrics)
-- **API Reference**: [GitHub Copilot API Endpoints](https://docs.github.com/en/enterprise-cloud@latest/rest/copilot/copilot-usage-metrics?apiVersion=2022-11-28#get-copilot-enterprise-usage-metrics)
+- **API Reference**: [GitHub Copilot API Endpoints](https://docs.github.com/en/enterprise-cloud@latest/rest/copilot/copilot-usage-metrics?apiVersion=2026-03-10)
 
 
 ## 🛠️ Troubleshooting
